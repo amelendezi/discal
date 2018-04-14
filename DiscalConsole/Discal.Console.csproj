@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9822F575-6A22-4884-B3B9-224C2BB1EB89}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DiscalConsole</RootNamespace>
-    <AssemblyName>DiscalConsole</AssemblyName>
+    <RootNamespace>Discal.Console</RootNamespace>
+    <AssemblyName>Discal.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
