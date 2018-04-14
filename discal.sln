@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Orchestration", "Dis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Input", "DiscalInput\Discal.Input.csproj", "{A592E86F-F8CD-4B34-9E73-5AF5DDBEBCC0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3135E892-861B-49AB-8780-3C7BC6129B88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "res", "res", "{85EE41B4-9A12-486A-BC45-B65EFC94352A}"
+	ProjectSection(SolutionItems) = preProject
+		original.csv = original.csv
+		sample.csv = sample.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9822F575-6A22-4884-B3B9-224C2BB1EB89} = {3135E892-861B-49AB-8780-3C7BC6129B88}
+		{651891CF-E614-4220-B978-AF6A6E5DE6C6} = {3135E892-861B-49AB-8780-3C7BC6129B88}
+		{A592E86F-F8CD-4B34-9E73-5AF5DDBEBCC0} = {3135E892-861B-49AB-8780-3C7BC6129B88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75A0A962-C948-447C-9828-88B9369CB118}
