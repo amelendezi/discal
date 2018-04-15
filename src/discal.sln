@@ -11,10 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Input", "DiscalInput
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3135E892-861B-49AB-8780-3C7BC6129B88}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "res", "res", "{85EE41B4-9A12-486A-BC45-B65EFC94352A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "res", "res", "{9592D96D-7174-491F-BD9D-F7FFA7CD6C68}"
 	ProjectSection(SolutionItems) = preProject
-		original.csv = original.csv
-		sample.csv = sample.csv
+		res\input.csv = res\input.csv
+		res\input.xlsx = res\input.xlsx
 	EndProjectSection
 EndProject
 Global
