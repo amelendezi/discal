@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Discal.Input.DomainModel;
 using Discal.Orchestration;
 
-namespace Discal.Input.Reader
+namespace Discal.Input
 {
   public class CsvReader : IReader
   {

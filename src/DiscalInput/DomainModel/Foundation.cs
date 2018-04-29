@@ -1,4 +1,4 @@
-﻿namespace Discal.Input.DomainModel
+﻿namespace Discal.Input
 {
   public class Foundation
   {

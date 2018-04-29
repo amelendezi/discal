@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Discal.Input.DomainModel;
-using Discal.Input.Reader;
+using Discal.Input;
 using Discal.Orchestration;
 using NUnit.Framework;
 

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Discal.Input.DomainModel;
 using Discal.Orchestration;
 
-namespace Discal.Input.Reader
+namespace Discal.Input
 {
   public interface IReader
   {
