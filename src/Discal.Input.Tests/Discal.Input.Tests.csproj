@@ -63,6 +63,10 @@
       <Project>{a592e86f-f8cd-4b34-9e73-5af5ddbebcc0}</Project>
       <Name>Discal.Input</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DiscalOrchestrator\Discal.Orchestration.csproj">
+      <Project>{651891cf-e614-4220-b978-af6a6e5de6c6}</Project>
+      <Name>Discal.Orchestration</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

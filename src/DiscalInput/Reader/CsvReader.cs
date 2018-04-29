@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Discal.Input.DomainModel;
+using Discal.Orchestration;
 
 namespace Discal.Input.Reader
 {
   public class CsvReader : IReader
   {
-    public IEnumerable<Foundation> Read(string filePath)
+    public IEnumerable<Foundation> Read(string filePath, ILogger logger)
     {
+      int lineCounter = 0;
       string line;
       System.IO.StreamReader file = new System.IO.StreamReader(filePath);
       while((line = file.ReadLine()) != null)
       {
+        lineCounter++;
         Foundation foundation = TryParse(line);
         if(foundation != null)
         {
           yield return foundation;
+        }
+        else
+        {
+          logger.Log($"Error en lectura de la linea #{lineCounter} en el archivo: {filePath}");
         }
       }
     }
