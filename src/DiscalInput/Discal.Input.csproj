@@ -43,7 +43,9 @@
     <Compile Include="DomainModel\Foundation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reader\CsvReader.cs" />
+    <Compile Include="Reader\DataCleaner.cs" />
     <Compile Include="Reader\IReader.cs" />
+    <Compile Include="Reader\LineParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DiscalOrchestrator\Discal.Orchestration.csproj">

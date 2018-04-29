@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Reader\CsvReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader\DataCleanerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
