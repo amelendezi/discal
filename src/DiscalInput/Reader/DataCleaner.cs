@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Discal.Input.Reader
 {
@@ -16,7 +17,9 @@ namespace Discal.Input.Reader
 
     private static string CleanText(string text)
     {
-      return Regex.Replace(text, @"( |\r?\n)\1+", "$1").Trim();
+      string result = text.Replace("\"", String.Empty);
+      result = Regex.Replace(result, @"( |\r?\n)\1+", "$1").Trim();
+      return result;
     }
   }
 }

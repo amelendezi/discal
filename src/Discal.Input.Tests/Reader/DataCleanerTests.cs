@@ -15,7 +15,7 @@ namespace Discal.Input.Tests.Reader
         Number = 1,
         Nit = "  8874378  ",
         Description = "Some    description with spaces     ",
-        Neighborhood = "   A    Neighborhood      ",
+        Neighborhood = "\"   A    Neighborhood\"      ",
         Location = "   A Location     ",
         Address = "Address       ",
         Coordinates = "-71.04343,      75.8954784          "
