@@ -14,7 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{B437ED07-6542-4F49-B3BD-8378D6F924A7}"
 	ProjectSection(SolutionItems) = preProject
 		Resources\input.csv = Resources\input.csv
-		Resources\test\input_test.csv = Resources\test\input_test.csv
+		Resources\test\input_test_correct.csv = Resources\test\input_test_correct.csv
+		Resources\test\input_test_incomplete.csv = Resources\test\input_test_incomplete.csv
+		Resources\test\input_test_incorrect.csv = Resources\test\input_test_incorrect.csv
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Input.Tests", "Discal.Input.Tests\Discal.Input.Tests.csproj", "{08C5F2B4-0CAF-457C-8E99-8090383D4814}"
