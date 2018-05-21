@@ -1,13 +1,29 @@
 ﻿using System;
+using Discal.Console.Modules;
+using Discal.Console.State;
 
 namespace DiscalConsole
 {
-  class Program
+  public class Program
   {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
       Console.WriteLine("*********************************************************************************");
-      Console.WriteLine("Discal Console App");
+
+      Console.WriteLine("Initializing system state manager");
+      var state = new StateManager();
+
+      Console.WriteLine("Running import ...");
+      var importModule = new ImportModule();
+      importModule.Run(state);
+
+      Console.WriteLine("");
+
+      foreach(var modelFoundation in state.Model.Foundations)
+      {
+        Console.WriteLine(modelFoundation.Nit);
+      }
+
       Console.ReadKey();
     }
   }

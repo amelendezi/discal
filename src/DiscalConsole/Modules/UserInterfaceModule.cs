@@ -18,5 +18,10 @@
       System.Console.Write("Presione cualquier tecla para continuar: ");
       System.Console.ReadKey();
     }
+
+    public void Clear()
+    {
+      System.Console.Clear();
+    }
   }
 }

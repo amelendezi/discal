@@ -46,11 +46,20 @@
     <Compile Include="Modules\ImportModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\StateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
+      <Project>{fae06315-c06c-4228-9c07-65c9d0f26a41}</Project>
+      <Name>Discal.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
+      <Project>{d1b0c8ba-8606-4067-a9aa-57f185786ece}</Project>
+      <Name>Discal.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DiscalOrchestrator\Discal.Orchestration.csproj">
       <Project>{651891cf-e614-4220-b978-af6a6e5de6c6}</Project>
       <Name>Discal.Orchestration</Name>

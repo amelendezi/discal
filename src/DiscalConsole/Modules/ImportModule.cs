@@ -1,23 +1,27 @@
-﻿using Discal.Orchestration.Model;
+﻿using Discal.Console.State;
+using Discal.Orchestration.Model;
 using Discal.Orchestration.Orchestrators;
 
 namespace Discal.Console.Modules
 {
   public class ImportModule : UserInterfaceModule
   {
-    private ImportConfig _config;
+    private Config _config;
+    private ImportOrchestrator _orchestrator;
 
     public ImportModule()
     {
-      _config = new ImportConfig()
+      _orchestrator = new ImportOrchestrator();
+      _config = new Config()
       {
-        InputFilePath = @"C:\amedev\projects\discal\src\Resources\input.csv"
+
       };
     }
 
-    public void Run()
+    public void Run(StateManager state)
     {
-      var orchestrator = new ImportOrchestrator();
+      PrintHeader();
+      _orchestrator.Run(_config, state.Model);
     }
 
     private void PrintHeader()
@@ -29,6 +33,7 @@ namespace Discal.Console.Modules
       SectionLine();
       NextLine();
       Continue();
+      NextLine();
     }
   }
 }
