@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
+      <Project>{d1b0c8ba-8606-4067-a9aa-57f185786ece}</Project>
+      <Name>Discal.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DiscalInput\Discal.Input.csproj">
       <Project>{a592e86f-f8cd-4b34-9e73-5af5ddbebcc0}</Project>
       <Name>Discal.Input</Name>
