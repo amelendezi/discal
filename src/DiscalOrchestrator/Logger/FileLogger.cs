@@ -21,14 +21,29 @@ namespace Discal.Orchestration
 
     public void Commit()
     {
-      using(StreamWriter file = new StreamWriter(_fileName))
+      if(!File.Exists(_fileName))
       {
-        foreach(string message in _messages)
+        using(StreamWriter file = new StreamWriter(_fileName))
         {
-          file.WriteLine(message);
+          foreach(string message in _messages)
+          {
+            file.WriteLine(message);
+          }
+          file.Close();
         }
-        file.Close();
       }
+      else
+      {
+        using(StreamWriter file = File.AppendText(_fileName))
+        {
+          foreach(string message in _messages)
+          {
+            file.WriteLine(message);
+          }
+          file.Close();
+        }
+      }
+      _messages.Clear();
     }
 
     public IReadOnlyCollection<string> GetLog()
