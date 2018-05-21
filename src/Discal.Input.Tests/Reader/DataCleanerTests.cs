@@ -1,6 +1,6 @@
 ﻿using Discal.Input.Reader;
-using NUnit.Framework;
 using Discal.Model;
+using NUnit.Framework;
 
 namespace Discal.Input.Tests.Reader
 {
