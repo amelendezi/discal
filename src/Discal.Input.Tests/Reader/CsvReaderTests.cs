@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Discal.Common;
+using Discal.Model;
 using NUnit.Framework;
 
 namespace Discal.Input.Tests

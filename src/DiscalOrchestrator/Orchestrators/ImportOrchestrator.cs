@@ -1,10 +1,10 @@
-﻿namespace Discal.Orchestration.Orchestrators
+﻿using Discal.Orchestration.Model;
+
+namespace Discal.Orchestration.Orchestrators
 {
   public class ImportOrchestrator
   {
-
-
-    public void RunImport()
+    public void Run(ImportConfig import)
     {
 
     }

@@ -1,7 +1,7 @@
 ﻿namespace Discal.Orchestration.Model
 {
-  public static class ImportConfig
+  public class ImportConfig
   {
-
+    public string InputFilePath { get; set; }
   }
 }

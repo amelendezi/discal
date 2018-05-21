@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Discal.Input.Reader;
 using Discal.Common;
+using Discal.Model;
 
 namespace Discal.Input
 {

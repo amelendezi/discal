@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Discal.Model;
 
 namespace Discal.Input.Reader
 {
