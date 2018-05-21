@@ -48,9 +48,9 @@
     <Compile Include="Reader\LineParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DiscalOrchestrator\Discal.Orchestration.csproj">
-      <Project>{651891cf-e614-4220-b978-af6a6e5de6c6}</Project>
-      <Name>Discal.Orchestration</Name>
+    <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
+      <Project>{fae06315-c06c-4228-9c07-65c9d0f26a41}</Project>
+      <Name>Discal.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
-namespace Discal.Orchestration.Tests.Logger
+namespace Discal.Common.Tests.Logger
 {
   [TestFixture]
   public class FileLoggerTests

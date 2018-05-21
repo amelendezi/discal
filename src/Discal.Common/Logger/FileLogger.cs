@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Discal.Orchestration
+namespace Discal.Common
 {
   public class FileLogger : ILogger
   {

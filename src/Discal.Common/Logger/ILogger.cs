@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Discal.Orchestration
+namespace Discal.Common
 {
   public interface ILogger
   {
