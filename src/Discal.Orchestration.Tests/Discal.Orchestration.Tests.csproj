@@ -52,6 +52,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orchestrators\ImportOrchestratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,26 @@
     <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
       <Project>{fae06315-c06c-4228-9c07-65c9d0f26a41}</Project>
       <Name>Discal.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
+      <Project>{D1B0C8BA-8606-4067-A9AA-57F185786ECE}</Project>
+      <Name>Discal.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Discal.Processing\Discal.Processing.csproj">
+      <Project>{57a3db74-5ab5-4946-a167-d5644aec8289}</Project>
+      <Name>Discal.Processing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiscalConsole\Discal.Console.csproj">
+      <Project>{9822f575-6a22-4884-b3b9-224c2bb1eb89}</Project>
+      <Name>Discal.Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiscalInput\Discal.Input.csproj">
+      <Project>{A592E86F-F8CD-4B34-9E73-5AF5DDBEBCC0}</Project>
+      <Name>Discal.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiscalOrchestrator\Discal.Orchestration.csproj">
+      <Project>{651891cf-e614-4220-b978-af6a6e5de6c6}</Project>
+      <Name>Discal.Orchestration</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

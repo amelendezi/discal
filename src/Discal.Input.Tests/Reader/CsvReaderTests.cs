@@ -16,9 +16,8 @@ namespace Discal.Input.Tests
     [Test]
     public void ReadFromCsvFile_WithCorrectData_ExpectsFoundationModelInstances_WithCorrectValues()
     {
-      IReader reader = new CsvReader();
       ILogger logger = new FileLogger(@".\InputErrorLog.txt");
-      IEnumerable<Foundation> foundations = reader.Read(CorrectTestFile, logger);
+      IEnumerable<Foundation> foundations = CsvReader.Read(CorrectTestFile, logger);
 
       Assert.AreEqual(expected: 5, actual: foundations.Count());
       Assert.AreEqual(expected: true, actual: foundations.Any(f => f.Number == 1 && f.Nit == "827000274" && f.Coordinates == "4.670127,-74.110777"));
@@ -32,9 +31,8 @@ namespace Discal.Input.Tests
     [Test]
     public void ReadFromCsvFile_WithIncompletButCorrectData_ExpectsFoundationModelInstances_WithMinimumRequiredValues()
     {
-      IReader reader = new CsvReader();
       ILogger logger = new FileLogger(@".\InputErrorLog.txt");
-      IEnumerable<Foundation> foundations = reader.Read(IncompleteTestFile, logger);
+      IEnumerable<Foundation> foundations = CsvReader.Read(IncompleteTestFile, logger);
 
       Assert.AreEqual(expected: 3, actual: foundations.Count());
       Assert.AreEqual(expected: true, actual: foundations.Any(f => f.Number == 1 && f.Nit == "827000274" && f.Coordinates == "4.670127,-74.110777"));
@@ -46,9 +44,8 @@ namespace Discal.Input.Tests
     [Test]
     public void ReadFromCsvFile_WithIncorrectData_ExpectsFoundationsToNotBeCreatedAndLinesToBeIgnored()
     {
-      IReader reader = new CsvReader();
       ILogger logger = new FileLogger(@".\InputErrorLog.txt");
-      IEnumerable<Foundation> foundations = reader.Read(IncorrectTestFile, logger);
+      IEnumerable<Foundation> foundations = CsvReader.Read(IncorrectTestFile, logger);
 
       Assert.AreEqual(expected: 0, actual: foundations.Count());
       Assert.AreEqual(expected: 6, actual: logger.GetLog().Count);
