@@ -2,6 +2,7 @@
 using Discal.Input;
 using Discal.Model;
 using Discal.Orchestration.Model;
+using Discal.Processing.Builders;
 
 namespace Discal.Orchestration.Orchestrators
 {
@@ -9,8 +10,9 @@ namespace Discal.Orchestration.Orchestrators
   {
     public void Run(Config config, MainModel model)
     {
-      var reader = new CsvReader();
-      model.Foundations = reader.Read(config.InputFilePath, config.Logger).ToList();
+      Foundation[] foundations = CsvReader.Read(config.InputFilePath, config.Logger).ToArray();
+      model.Foundations = foundations;
+      model.RequestBatches = RequestBatchBuilder.BuildRequestBatches(foundations);
     }
   }
 }

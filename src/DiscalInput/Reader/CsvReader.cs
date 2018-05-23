@@ -5,9 +5,9 @@ using Discal.Model;
 
 namespace Discal.Input
 {
-  public class CsvReader : IReader
+  public static class CsvReader
   {
-    public IEnumerable<Foundation> Read(string filePath, ILogger logger)
+    public static IEnumerable<Foundation> Read(string filePath, ILogger logger)
     {
       int lineCounter = 0;
       string line;

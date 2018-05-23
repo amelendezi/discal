@@ -4,6 +4,8 @@ namespace Discal.Model
 {
   public class MainModel
   {
-    public List<Foundation> Foundations { get; set; }
+    public Foundation[] Foundations { get; set; }
+
+    public List<RequestBatch> RequestBatches { get; set; }
   }
 }
