@@ -32,6 +32,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Common.Tests", "Disc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Model", "Discal.Model\Discal.Model.csproj", "{D1B0C8BA-8606-4067-A9AA-57F185786ECE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Processing", "Discal.Processing\Discal.Processing.csproj", "{57A3DB74-5AB5-4946-A167-D5644AEC8289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discal.Processing.Tests", "Discal.Processing.Tests\Discal.Processing.Tests.csproj", "{3C293995-8162-4928-8750-09FB28C1ACE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +74,14 @@ Global
 		{D1B0C8BA-8606-4067-A9AA-57F185786ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1B0C8BA-8606-4067-A9AA-57F185786ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1B0C8BA-8606-4067-A9AA-57F185786ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A3DB74-5AB5-4946-A167-D5644AEC8289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A3DB74-5AB5-4946-A167-D5644AEC8289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A3DB74-5AB5-4946-A167-D5644AEC8289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A3DB74-5AB5-4946-A167-D5644AEC8289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C293995-8162-4928-8750-09FB28C1ACE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C293995-8162-4928-8750-09FB28C1ACE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C293995-8162-4928-8750-09FB28C1ACE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C293995-8162-4928-8750-09FB28C1ACE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +95,8 @@ Global
 		{FAE06315-C06C-4228-9C07-65C9D0F26A41} = {3135E892-861B-49AB-8780-3C7BC6129B88}
 		{F0C98C37-A090-4E88-95D0-515CD264A7F3} = {45B17D92-4BC2-445E-9591-F793690EDA96}
 		{D1B0C8BA-8606-4067-A9AA-57F185786ECE} = {3135E892-861B-49AB-8780-3C7BC6129B88}
+		{57A3DB74-5AB5-4946-A167-D5644AEC8289} = {3135E892-861B-49AB-8780-3C7BC6129B88}
+		{3C293995-8162-4928-8750-09FB28C1ACE6} = {45B17D92-4BC2-445E-9591-F793690EDA96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75A0A962-C948-447C-9828-88B9369CB118}
