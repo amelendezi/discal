@@ -17,13 +17,6 @@ namespace DiscalConsole
       var importModule = new ImportModule();
       importModule.Run(state);
 
-      Console.WriteLine("");
-
-      foreach(var modelFoundation in state.Model.Foundations)
-      {
-        Console.WriteLine(modelFoundation.Nit);
-      }
-
       Console.ReadKey();
     }
   }
