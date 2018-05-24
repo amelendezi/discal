@@ -7,5 +7,9 @@ namespace Discal.Orchestration.Model
     public string InputFilePath { get; set; }
 
     public FileLogger Logger { get; set; }
+
+    public string ModelStateFilePath { get; set; }
+
+    public string ConfigStateFilePath { get; set; }
   }
 }

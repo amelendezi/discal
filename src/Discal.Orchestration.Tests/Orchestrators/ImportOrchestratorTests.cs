@@ -15,7 +15,6 @@ namespace Discal.Orchestration.Tests.Orchestrators
       var orchestrator = new ImportOrchestrator();
       orchestrator.Run(state.Config, state.Model);
 
-
       int comparisonCount = 0;
 
       foreach(var requestBatch in state.Model.RequestBatches)
