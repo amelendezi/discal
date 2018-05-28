@@ -14,6 +14,11 @@ namespace Discal.Console.State
       Write(state.Config.ConfigStateFilePath, config);
     }
 
+    public static void Load(StateManager state)
+    {
+
+    }
+
     private static void Write(string outputFilePath, string content)
     {
       Cleanup(outputFilePath);

@@ -8,6 +8,7 @@ namespace Discal.Console.State
   {
     public StateManager()
     {
+      IsLoaded = false;
       Model = new MainModel();
       Config = new Config()
       {
@@ -17,6 +18,8 @@ namespace Discal.Console.State
         Logger = new FileLogger(@"C:\amedev\projects\discal\src\Resources\mainlog.txt")
       };
     }
+
+    public bool IsLoaded { get; }
 
     public MainModel Model { get; set; }
 

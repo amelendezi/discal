@@ -17,6 +17,9 @@ namespace DiscalConsole
       var importModule = new ImportModule();
       importModule.Run(state);
 
+      state.Save();
+      Console.WriteLine("Saved system state ...");
+
       Console.ReadKey();
     }
   }
