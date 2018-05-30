@@ -10,8 +10,7 @@ namespace DiscalConsole
     {
       var state = new StateManager();
       LoadAndImport(state);
-
-
+      ExecuteGoogleApiCalls(state);
     }
 
     private static void LoadAndImport(StateManager state)
@@ -32,6 +31,11 @@ namespace DiscalConsole
         Console.WriteLine("Model has been loaded ...");
       }
       Console.ReadKey();
+    }
+
+    private static void ExecuteGoogleApiCalls(StateManager state)
+    {
+
     }
   }
 }
