@@ -16,7 +16,6 @@ namespace Discal.Orchestration.Orchestrators
         Foundations = foundations,
         RequestBatches = RequestBatchBuilder.BuildRequestBatches(foundations)
       };
-
     }
   }
 }
