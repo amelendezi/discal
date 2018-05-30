@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Discal.Input.Reader;
-using Discal.Common;
 using Discal.Model;
 
 namespace Discal.Input
 {
   public static class CsvReader
   {
-    public static IEnumerable<Foundation> Read(string filePath, ILogger logger)
+    public static IEnumerable<Foundation> Read(string filePath)
     {
       int lineCounter = 0;
       string line;
@@ -26,7 +26,7 @@ namespace Discal.Input
         }
         else
         {
-          logger.Log($"Error en lectura de la linea #{lineCounter} en el archivo: {filePath}");
+          throw new Exception($"Error when attempting to read line #{lineCounter} from file: {filePath}");
         }
       }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
-using Discal.Console.Modules;
 using Discal.Console.State;
+using Discal.Orchestration.Orchestrators;
 
 namespace DiscalConsole
 {
@@ -9,32 +9,27 @@ namespace DiscalConsole
     public static void Main(string[] args)
     {
       var state = new StateManager();
-
-      Console.WriteLine("Attempting to load config file ... ");
-      state.LoadConfig();
-      Console.WriteLine("Config has been loaded ... ");
-      Console.ReadKey();
-
-      Console.WriteLine("Attempting to load import data ...");
-
-      Console.WriteLine("Import data has been loaded ...");
-      Console.ReadKey();
-
-
-
-      Console.WriteLine("Running import ...");
-      var importModule = new ImportModule();
-      // importModule.Run(state.Model, state.Config);
-
-      state.Save();
-      Console.WriteLine("Saved system state ...");
-
-      Console.ReadKey();
+      LoadAndImport(state);
     }
 
-    private static void LoadConfig()
+    private static void LoadAndImport(StateManager state)
     {
+      // Load config      
+      state.LoadConfig();
+      Console.WriteLine("Config has been loaded ... ");
 
+      // Load Model      
+      if(!state.LoadModel())
+      {
+        state.Model = ImportOrchestrator.Run(state.Config.ImportFilePath);
+        state.Save();
+        Console.WriteLine("Import from data has been done and saved ...");
+      }
+      else
+      {
+        Console.WriteLine("Model has been loaded ...");
+      }
+      Console.ReadKey();
     }
   }
 }
