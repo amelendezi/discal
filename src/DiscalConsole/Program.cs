@@ -10,6 +10,8 @@ namespace DiscalConsole
     {
       var state = new StateManager();
       LoadAndImport(state);
+
+
     }
 
     private static void LoadAndImport(StateManager state)

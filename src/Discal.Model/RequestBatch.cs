@@ -6,6 +6,7 @@ namespace Discal.Model
   {
     public RequestBatch(Foundation foundation)
     {
+      HasBeenProcessed = false;
       Foundation = foundation;
       FoundationsToCompareAgainst = new List<Foundation>();
     }
@@ -15,5 +16,7 @@ namespace Discal.Model
     public List<Foundation> FoundationsToCompareAgainst { get; set; }
 
     public string RequestUrl { get; set; }
+
+    public bool HasBeenProcessed { get; set; }
   }
 }
