@@ -1,1 +1,5 @@
-{"InputFilePath":"C:\\amedev\\projects\\discal\\src\\Resources\\input.csv","Logger":{},"ModelStateFilePath":"C:\\amedev\\projects\\discal\\src\\Resources\\model.json","ConfigStateFilePath":"C:\\amedev\\projects\\discal\\src\\Resources\\config.json"}
+{
+    "ImportFilePath": "C:\\amedev\\projects\\discal\\src\\Resources\\input.csv",    
+    "ModelFilePath": ".\\model.json",
+    "LogFilePath": ".\\log.txt"
+}

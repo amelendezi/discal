@@ -8,10 +8,10 @@ namespace Discal.Console.State
     public static void Save(StateManager state)
     {
       var model = JsonConvert.SerializeObject(state.Model);
-      Write(state.Config.ModelStateFilePath, model);
+      // Write(state.Config.ModelStateFilePath, model);
 
       var config = JsonConvert.SerializeObject(state.Config);
-      Write(state.Config.ConfigStateFilePath, config);
+      // Write(state.Config.ConfigStateFilePath, config);
     }
 
     public static void Load(StateManager state)

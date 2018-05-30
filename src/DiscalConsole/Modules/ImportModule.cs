@@ -1,4 +1,5 @@
-﻿using Discal.Console.State;
+﻿using Discal.Common;
+using Discal.Model;
 using Discal.Orchestration.Orchestrators;
 
 namespace Discal.Console.Modules
@@ -12,10 +13,10 @@ namespace Discal.Console.Modules
       _orchestrator = new ImportOrchestrator();
     }
 
-    public void Run(StateManager state)
+    public void Run(MainModel model, Config config)
     {
-      PrintHeader(state.Config.InputFilePath);
-      _orchestrator.Run(state.Config, state.Model);
+      PrintHeader(config.ImportFilePath);
+      _orchestrator.Run(config, model);
     }
 
     private void PrintHeader(string inputFilePath)

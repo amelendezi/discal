@@ -1,33 +1,40 @@
-﻿using Discal.Common;
+﻿using System.IO;
+using Discal.Common;
 using Discal.Model;
-using Discal.Orchestration.Model;
+using Newtonsoft.Json;
 
 namespace Discal.Console.State
 {
   public class StateManager
   {
+    private static string ConfigFile = @".\config.json";
+
     public StateManager()
     {
-      IsLoaded = false;
       Model = new MainModel();
-      Config = new Config()
-      {
-        ModelStateFilePath = @"C:\amedev\projects\discal\src\Resources\model.json",
-        ConfigStateFilePath = @"C:\amedev\projects\discal\src\Resources\config.json",
-        InputFilePath = @"C:\amedev\projects\discal\src\Resources\input.csv",
-        Logger = new FileLogger(@"C:\amedev\projects\discal\src\Resources\mainlog.txt")
-      };
     }
-
-    public bool IsLoaded { get; }
 
     public MainModel Model { get; set; }
 
-    public Config Config { get; set; }
+    public Config Config { get; private set; }
 
     public void Save()
     {
       StatePersistance.Save(this);
+    }
+
+    public void LoadConfig()
+    {
+      using(StreamReader r = new StreamReader(ConfigFile))
+      {
+        string json = r.ReadToEnd();
+        Config = JsonConvert.DeserializeObject<Config>(json);
+      }
+    }
+
+    public void Load()
+    {
+
     }
   }
 }
