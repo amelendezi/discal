@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3135E892-861
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{B437ED07-6542-4F49-B3BD-8378D6F924A7}"
 	ProjectSection(SolutionItems) = preProject
+		Resources\input-dev.csv = Resources\input-dev.csv
 		Resources\input.csv = Resources\input.csv
 		Resources\test\input_test_correct.csv = Resources\test\input_test_correct.csv
 		Resources\test\input_test_incomplete.csv = Resources\test\input_test_incomplete.csv

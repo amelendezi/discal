@@ -1,5 +1,6 @@
 ﻿using System;
-using Discal.Console.State;
+using Discal.Console;
+using Discal.Model;
 using Discal.Orchestration.Orchestrators;
 
 namespace DiscalConsole
@@ -8,6 +9,20 @@ namespace DiscalConsole
   {
     public static void Main(string[] args)
     {
+      if(args.Length > 0)
+      {
+        string option = args[0];
+        switch(option)
+        {
+          case "prod":
+            Initializer.ProductionConfig();
+            break;
+          case "dev":
+            Initializer.DevConfig();
+            break;
+        }
+      }
+
       var state = new StateManager();
       LoadAndImport(state);
       ExecuteGoogleApiCalls(state);
@@ -35,7 +50,10 @@ namespace DiscalConsole
 
     private static void ExecuteGoogleApiCalls(StateManager state)
     {
+      foreach(var modelRequestBatch in state.Model.RequestBatches)
+      {
 
+      }
     }
   }
 }
