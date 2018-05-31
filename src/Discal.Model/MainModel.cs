@@ -7,5 +7,7 @@ namespace Discal.Model
     public Foundation[] Foundations { get; set; }
 
     public List<RequestBatch> RequestBatches { get; set; }
+
+    public List<GeoComparison> GeoComparisons { get; set; }
   }
 }

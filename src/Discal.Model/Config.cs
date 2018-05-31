@@ -1,4 +1,6 @@
-﻿namespace Discal.Model
+﻿using System.Collections.Generic;
+
+namespace Discal.Model
 {
   public class Config
   {
@@ -8,6 +10,6 @@
 
     public string LogFilePath { get; set; }
 
-    public ApiKey[] GoogleApiKeys { get; set; }
+    public List<ApiKey> GoogleApiKeys { get; set; }
   }
 }

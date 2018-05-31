@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Discal.Common;
+using Discal.Model;
 using Newtonsoft.Json;
 
 namespace Discal.Console
@@ -28,15 +28,15 @@ namespace Discal.Console
         ImportFilePath = @"C:\amedev\projects\discal\src\Resources\input-dev.csv",
         ModelFilePath = @".\model.json",
         LogFilePath = @".\log.txt",
-        GoogleApiKeys = new[] { BuildKey("AIzaSyC--chDrOa06MHTrdmkt5L-Wg26TiYHKLk") }
+        GoogleApiKeys = new List<ApiKey>() { BuildKey("AIzaSyC--chDrOa06MHTrdmkt5L-Wg26TiYHKLk") }
       };
 
       Save(config);
     }
 
-    private static ApiKey[] BuildKeys()
+    private static List<ApiKey> BuildKeys()
     {
-      List<ApiKey> keys = new List<ApiKey>();
+      var keys = new List<ApiKey>();
       keys.Add(BuildKey("AIzaSyDSN-SLeQKlsmBYmYfSsWDujG-A6rrOnT0"));
       keys.Add(BuildKey("AIzaSyAJfJrOV2WorWVbaoC_ynTxHSBE-q1LmZY"));
       keys.Add(BuildKey("AIzaSyDf434nO_Ty2MDO9RxsLwBtkyxOQxuF0yc"));
@@ -49,7 +49,7 @@ namespace Discal.Console
       keys.Add(BuildKey("AIzaSyB81rrIFoUgGtx4gFgaMU-hQhFdrfxPxg0"));
       keys.Add(BuildKey("AIzaSyBgNactEzlYd00B5rrTOocLhnNEIVITN9k"));
       keys.Add(BuildKey("AIzaSyARZRomXq2qVTw5hS2BrZq0dpgmLaq7x_g"));
-      return keys.ToArray();
+      return keys;
     }
 
     private static ApiKey BuildKey(string key)
