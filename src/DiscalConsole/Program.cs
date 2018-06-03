@@ -38,7 +38,7 @@ namespace DiscalConsole
       if(!state.LoadModel())
       {
         state.Model = ImportOrchestrator.Run(state.Config.ImportFilePath);
-        state.Save();
+        state.SaveModel();
         Console.WriteLine("Import from data has been done and saved ...");
       }
       else

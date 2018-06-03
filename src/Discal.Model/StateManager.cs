@@ -11,10 +11,16 @@ namespace Discal.Model
 
     public Config Config { get; private set; }
 
-    public void Save()
+    public void SaveModel()
     {
       var model = JsonConvert.SerializeObject(Model);
       Write(Config.ModelFilePath, model);
+    }
+
+    public void SaveConfig()
+    {
+      var config = JsonConvert.SerializeObject(Config);
+      Write(ConfigFile, config);
     }
 
     public void LoadConfig()

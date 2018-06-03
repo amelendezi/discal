@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using Discal.Model;
 using Discal.Processing;
 using Discal.Processing.Builders;
@@ -60,9 +59,12 @@ namespace Discal.Orchestration.Orchestrators
               key = state.Config.GoogleApiKeys.FirstOrDefault(k => k.Active);
               request.HasBeenProcessed = false;
               request.Status = "overquerylimit";
-              state.Save();
+              state.SaveConfig();
+
+              // There are no more keys available, so we exit the application
               if(key == null)
               {
+                state.SaveModel();
                 Console.WriteLine("You are out of valid keys for today");
                 Console.ReadKey();
                 Environment.Exit(0);
@@ -76,7 +78,7 @@ namespace Discal.Orchestration.Orchestrators
               Console.ReadKey();
             }
           }
-          state.Save();
+          state.SaveModel();
         }
       }
     }
