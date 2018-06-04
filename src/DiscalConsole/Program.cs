@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Mime;
 using Discal.Console;
 using Discal.Model;
 using Discal.Orchestration.Orchestrators;
@@ -22,10 +23,12 @@ namespace DiscalConsole
             break;
         }
       }
-
-      var state = new StateManager();
-      LoadAndImport(state);
-      GoogleApiOrchestrator.Run(state);
+      else
+      {
+        var state = new StateManager();
+        LoadAndImport(state);
+        GoogleApiOrchestrator.Run(state);
+      }
     }
 
     private static void LoadAndImport(StateManager state)
@@ -45,7 +48,6 @@ namespace DiscalConsole
       {
         Console.WriteLine("Model has been loaded ...");
       }
-      Console.ReadKey();
     }
   }
 }

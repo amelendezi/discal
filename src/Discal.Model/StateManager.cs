@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace Discal.Model
@@ -30,6 +31,7 @@ namespace Discal.Model
         string json = r.ReadToEnd();
         Config = JsonConvert.DeserializeObject<Config>(json);
       }
+      RefreshKeyValidity();
     }
 
     public bool LoadModel()
@@ -61,6 +63,27 @@ namespace Discal.Model
       {
         File.Delete(outputFilePath);
       }
+    }
+
+    private void RefreshKeyValidity()
+    {
+      DateTime today = DateTime.Today;
+      foreach(ApiKey key in Config.GoogleApiKeys)
+      {
+        if(key.Active)
+        {
+          key.LastDateOfUse = today;
+        }
+        else
+        {
+          if(key.LastDateOfUse != today)
+          {
+            key.LastDateOfUse = today;
+            key.Active = true;
+          }
+        }
+      }
+      SaveConfig();
     }
   }
 }

@@ -28,7 +28,7 @@ namespace Discal.Console
         ImportFilePath = @"C:\amedev\projects\discal\src\Resources\input-dev.csv",
         ModelFilePath = @".\model.json",
         LogFilePath = @".\log.txt",
-        GoogleApiKeys = new List<ApiKey>() { BuildKey("AIzaSyC--chDrOa06MHTrdmkt5L-Wg26TiYHKLk") }
+        GoogleApiKeys = new List<ApiKey>() { BuildKey("AIzaSyC--chDrOa06MHTrdmkt5L-Wg26TiYHKLk"), BuildKey("AIzaSyDSN-SLeQKlsmBYmYfSsWDujG-A6rrOnT0") }
       };
 
       Save(config);
@@ -57,7 +57,7 @@ namespace Discal.Console
       return new ApiKey()
       {
         Active = true,
-        LastDateOfUse = DateTime.UtcNow,
+        LastDateOfUse = DateTime.Today,
         Value = key
       };
     }
