@@ -40,15 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logger.cs" />
     <Compile Include="Orchestrators\GoogleApiOrchestrator.cs" />
     <Compile Include="Orchestrators\ImportOrchestrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
-      <Project>{FAE06315-C06C-4228-9C07-65C9D0F26A41}</Project>
-      <Name>Discal.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
       <Project>{d1b0c8ba-8606-4067-a9aa-57f185786ece}</Project>
       <Name>Discal.Model</Name>

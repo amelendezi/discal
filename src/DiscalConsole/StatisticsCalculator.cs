@@ -9,37 +9,49 @@ namespace Discal.Console
   {
     private static string StatisticsFilePath = @".\statistics.txt";
 
-    public static void Statistics(StateManager state)
+    public static void GenerateStatisticsFile(StateManager state)
     {
       Clear();
+      Save(GetStatistics(state));
+    }
 
-      Save($"Foundations       : {state.Model.Foundations.Length}");
-      Save($"Request Batches   : {state.Model.RequestBatches.Count}");
+    public static string GetStatistics(StateManager state)
+    {
+      StringBuilder sb = new StringBuilder();
 
-      int totalComparisons = 0;
-      foreach(var requestBatch in state.Model.RequestBatches)
-      {
-        totalComparisons = totalComparisons + requestBatch.FoundationsToCompareAgainst.Count;
-      }
-      Save($"Total Comparisons : {totalComparisons}");
-
-      int totalProcessed = state.Model.RequestBatches.Where(r => r.HasBeenProcessed).Count();
-      Save($"Processed         : {totalProcessed}");
-
-      int totalNotProcessed = state.Model.RequestBatches.Where(r => !r.HasBeenProcessed).Count();
-      Save($"Not Processed     : {totalNotProcessed}");
-
+      int foundations = state.Model.Foundations.Length;
+      int requestBatches = state.Model.RequestBatches.Count;
+      int expectedComparisons = CalculateExpectedComparisons(state);
+      int processedRequestBatches = state.Model.RequestBatches.Where(r => r.HasBeenProcessed).Count();
+      int nonProcessedRequestBatches = state.Model.RequestBatches.Where(r => !r.HasBeenProcessed).Count();
       int totalGood = state.Model.RequestBatches.Where(r => r.Status.Equals("good")).Count();
       int totalDenied = state.Model.RequestBatches.Where(r => r.Status.Equals("denied")).Count();
       int totalFailed = state.Model.RequestBatches.Where(r => r.Status.Equals("failed")).Count();
       int totalOverQueryLimit = state.Model.RequestBatches.Where(r => r.Status.Equals("overquerylimit")).Count();
       int totalAttempted = state.Model.RequestBatches.Where(r => r.Status.Equals("attempted")).Count();
+      sb.AppendLine("***********************************************");
+      sb.AppendLine($"Foundations           : {foundations}");
+      sb.AppendLine($"Request Batches       : {requestBatches}");
+      sb.AppendLine($"Expected Comparisons  : {expectedComparisons}");
+      sb.AppendLine($"Processed             : {processedRequestBatches}");
+      sb.AppendLine($"Not Processed         : {nonProcessedRequestBatches}");
+      sb.AppendLine($"Good                  : {totalGood}");
+      sb.AppendLine($"Denied                : {totalDenied}");
+      sb.AppendLine($"Failed                : {totalFailed}");
+      sb.AppendLine($"Over Query Limit      : {totalOverQueryLimit}");
+      sb.AppendLine($"Attempted             : {totalAttempted}");
+      sb.AppendLine("***********************************************");
+      return sb.ToString();
+    }
 
-      Save($"Total Good        : {totalGood}");
-      Save($"Total Denied      : {totalDenied}");
-      Save($"Total Failed      : {totalFailed}");
-      Save($"Total OverQueryL  : {totalOverQueryLimit}");
-      Save($"Total Attempted   : {totalAttempted}");
+    private static int CalculateExpectedComparisons(StateManager state)
+    {
+      int totalComparisons = 0;
+      foreach(var requestBatch in state.Model.RequestBatches)
+      {
+        totalComparisons = totalComparisons + requestBatch.FoundationsToCompareAgainst.Count;
+      }
+      return totalComparisons;
     }
 
     private static void Clear()

@@ -9,22 +9,46 @@ namespace DiscalConsole
   {
     public static void Main(string[] args)
     {
+      var state = new StateManager();
+
+      string option = null;
       if(args.Length > 0)
       {
-        string option = args[0];
-        switch(option)
-        {
-          case "config":
-            Initializer.ProductionConfig();
-            break;
-        }
+        option = args[0];
       }
-      else
+
+      switch(option)
       {
-        var state = new StateManager();
-        LoadAndImport(state);
-        StatisticsCalculator.Statistics(state);
-        GoogleApiOrchestrator.Run(state);
+        case "config":
+          Initializer.ProductionConfig();
+          Console.WriteLine("\n\rGenerted config.json file.\n\r");
+          Console.ReadKey();
+          break;
+        case "import":
+          LoadAndImport(state);
+          StatisticsCalculator.GenerateStatisticsFile(state);
+          Console.WriteLine("\n\rImport and load has been performed from the csv file.\n\r");
+          Console.ReadKey();
+          break;
+        case "stats":
+          LoadAndImport(state);
+          StatisticsCalculator.GenerateStatisticsFile(state);
+          Console.WriteLine("");
+          Console.WriteLine(StatisticsCalculator.GetStatistics(state));
+          break;
+
+        case "run":
+          LoadAndImport(state);
+          StatisticsCalculator.GenerateStatisticsFile(state);
+          GoogleApiOrchestrator.Run(state);
+          break;
+        default:
+          Console.WriteLine("\n\rProvide one of the following command line argument:");
+          Console.WriteLine("\n\rconfig : generate config file");
+          Console.WriteLine("import : do only import from csv file");
+          Console.WriteLine("stats  : show statistics");
+          Console.WriteLine("run    : execute the api caller\n\r");
+          break;
       }
     }
 
@@ -32,18 +56,12 @@ namespace DiscalConsole
     {
       // Load config      
       state.LoadConfig();
-      Console.WriteLine("Config has been loaded ... ");
 
       // Load Model      
       if(!state.LoadModel())
       {
         state.Model = ImportOrchestrator.Run(state.Config.ImportFilePath);
         state.SaveModel();
-        Console.WriteLine("Import from data has been done and saved ...");
-      }
-      else
-      {
-        Console.WriteLine("Model has been loaded ...");
       }
     }
   }

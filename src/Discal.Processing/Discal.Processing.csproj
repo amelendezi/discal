@@ -50,10 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
-      <Project>{fae06315-c06c-4228-9c07-65c9d0f26a41}</Project>
-      <Name>Discal.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
       <Project>{d1b0c8ba-8606-4067-a9aa-57f185786ece}</Project>
       <Name>Discal.Model</Name>

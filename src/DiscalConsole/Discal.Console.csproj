@@ -7,7 +7,7 @@
     <ProjectGuid>{9822F575-6A22-4884-B3B9-224C2BB1EB89}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Discal.Console</RootNamespace>
-    <AssemblyName>Discal.Console</AssemblyName>
+    <AssemblyName>Discal</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,10 +55,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Discal.Common\Discal.Common.csproj">
-      <Project>{fae06315-c06c-4228-9c07-65c9d0f26a41}</Project>
-      <Name>Discal.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Discal.Model\Discal.Model.csproj">
       <Project>{d1b0c8ba-8606-4067-a9aa-57f185786ece}</Project>
       <Name>Discal.Model</Name>

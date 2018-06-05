@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Discal.Common
 {
-  public class FileLogger : ILogger
+  public class FileLogger
   {
     private string _fileName;
     private List<string> _messages;
