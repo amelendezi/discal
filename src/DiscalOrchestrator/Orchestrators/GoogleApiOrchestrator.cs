@@ -26,7 +26,7 @@ namespace Discal.Orchestration.Orchestrators
           ApiCallUrlBuilder.BuildRequestBatchUrl(request, key.Value);
 
           // Execute api call
-          Thread.Sleep(1500);
+          Thread.Sleep(5000);
           GoogleCallResponse response = GoogleDistanceMatrixApi.GetResponseFromGoogleApi(request.RequestUrl);
 
           if(response.Status == "OK")

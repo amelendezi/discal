@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Mime;
 using Discal.Console;
 using Discal.Model;
 using Discal.Orchestration.Orchestrators;
@@ -15,11 +14,8 @@ namespace DiscalConsole
         string option = args[0];
         switch(option)
         {
-          case "prod":
+          case "config":
             Initializer.ProductionConfig();
-            break;
-          case "dev":
-            Initializer.DevConfig();
             break;
         }
       }
@@ -27,6 +23,7 @@ namespace DiscalConsole
       {
         var state = new StateManager();
         LoadAndImport(state);
+        StatisticsCalculator.Statistics(state);
         GoogleApiOrchestrator.Run(state);
       }
     }
