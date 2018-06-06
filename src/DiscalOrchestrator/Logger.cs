@@ -4,14 +4,6 @@ namespace Discal.Orchestration
 {
   public static class Logger
   {
-    public static void Delete(string file)
-    {
-      if(File.Exists(file))
-      {
-        File.Delete(file);
-      }
-    }
-
     public static void Write(string msg, string filePath)
     {
       if(!File.Exists(filePath))

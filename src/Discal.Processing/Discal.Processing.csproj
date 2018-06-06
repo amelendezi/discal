@@ -46,6 +46,8 @@
     <Compile Include="Builders\ApiCallUrlBuilder.cs" />
     <Compile Include="Builders\GeoComparisonBuilder.cs" />
     <Compile Include="Builders\RequestBatchBuilder.cs" />
+    <Compile Include="Exporter.cs" />
+    <Compile Include="FileUtility.cs" />
     <Compile Include="GoogleDistanceMatrixApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

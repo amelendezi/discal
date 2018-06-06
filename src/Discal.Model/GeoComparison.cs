@@ -37,5 +37,10 @@ namespace Discal.Model
       builder.AppendLine($"Duracion    : {Geo.DurationText} ({Geo.Duration})");
       return builder.ToString();
     }
+
+    public string GetShortSummary()
+    {
+      return $"{Source.Coordinates},{Target.Coordinates};{Geo.Distance}";
+    }
   }
 }

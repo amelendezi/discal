@@ -29,10 +29,15 @@ namespace Discal.Console
       int totalFailed = state.Model.RequestBatches.Where(r => r.Status.Equals("failed")).Count();
       int totalOverQueryLimit = state.Model.RequestBatches.Where(r => r.Status.Equals("overquerylimit")).Count();
       int totalAttempted = state.Model.RequestBatches.Where(r => r.Status.Equals("attempted")).Count();
+      int totalComparisons = state.Model.GeoComparisons.Count;
+
+      decimal progress = totalComparisons * 100 / expectedComparisons;
+
+      sb.AppendLine("***********************************************");
+      sb.AppendLine($"PROGRESS {progress}%");
       sb.AppendLine("***********************************************");
       sb.AppendLine($"Foundations           : {foundations}");
       sb.AppendLine($"Request Batches       : {requestBatches}");
-      sb.AppendLine($"Expected Comparisons  : {expectedComparisons}");
       sb.AppendLine($"Processed             : {processedRequestBatches}");
       sb.AppendLine($"Not Processed         : {nonProcessedRequestBatches}");
       sb.AppendLine($"Good                  : {totalGood}");
@@ -40,6 +45,8 @@ namespace Discal.Console
       sb.AppendLine($"Failed                : {totalFailed}");
       sb.AppendLine($"Over Query Limit      : {totalOverQueryLimit}");
       sb.AppendLine($"Attempted             : {totalAttempted}");
+      sb.AppendLine($"Expected Comparisons  : {expectedComparisons}");
+      sb.AppendLine($"Created Comparisons   : {totalComparisons}");
       sb.AppendLine("***********************************************");
       return sb.ToString();
     }
